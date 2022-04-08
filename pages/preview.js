@@ -2,7 +2,17 @@ export default function Preview({ preview }) {
   return (
     <div>
       <div>
-        {preview ? <p>Preview IS enabled.</p> : <p>Preview IS NOT enabled.</p>}
+        {preview ? (
+          <p>
+            Preview IS enabled. <code>getStaticProps</code> could see the
+            cookie.
+          </p>
+        ) : (
+          <p>
+            Preview IS NOT enabled. <code>getStaticProps</code> could NOT see
+            the cookie.
+          </p>
+        )}
       </div>
       {preview ? (
         <a href="/api/preview/disable">Disable Preview</a>
